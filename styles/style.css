@@ -2,4 +2,135 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-image: url(/images/cover-image-dark.png);
+  background-attachment: fixed;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+}
+
+.header {
+  padding-block: 10px;
+  padding-inline: 10px;
+  block-size: 100vh;
+  min-block-size: 668px;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  position: relative;
+}
+
+.header__title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  color: var(--title-color);
+  line-height: 0.83;
+}
+
+.header__aside {
+  align-self: center;
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  display: block;
+  line-height: 23.4px;
+}
+
+.decorated-word {
+  color: var(--accent-color);
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.decor-pointer::after {
+  content: '';
+  display: inline-block;
+  box-shadow: 0 0 4px 2px;
+  background-color: var(--accent-color);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.decorated-zone::after {
+  content: '';
+  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--accent-color);
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.decorated-zone::before {
+  content: '';
+  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--accent-color);
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  outline: 1px solid var(--accent-color);
+}
+
+.header__theme-menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--accent-color);
+}
+
+.header__theme-menu-button {
+  min-block-size: 26px;
+  min-inline-size: 70px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-transform: lowercase;
+  position: relative;
+  padding: 0;
+  line-height: 1;
+}
+
+@media not(screen) {
+  .header__theme-menu-button:hover {
+    outline: 1px solid var(--hover-color);
+  }
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: -0.125rem;
+  block-size: 1px;
+  background-color: var(--accent-color);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.header__theme-menu-button:focus-visible::after {
+  opacity: 1;
 }
