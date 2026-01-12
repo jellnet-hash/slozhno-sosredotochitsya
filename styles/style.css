@@ -4,9 +4,8 @@
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   background-image: url(/images/cover-image-dark.png);
   background-attachment: fixed;
-  display: flex;
-  margin: auto;
-  flex-direction: column;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .header {
@@ -35,6 +34,7 @@
   color: var(--text-color);
   display: block;
   line-height: 23.4px;
+  font-size: 18px;
 }
 
 .decorated-word {
@@ -110,10 +110,16 @@
   line-height: 1;
 }
 
-@media not(screen) {
-  .header__theme-menu-button:hover {
-    outline: 1px solid var(--hover-color);
-  }
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--hover-color);
+}
+
+.link:hover::after {
+  content: '';
+  position: absolute;
+  border-block-start: 1px solid currentColor;
+  inset-inline: 0;
+  bottom: -1px;
 }
 
 .header__theme-menu-button:focus {
@@ -133,4 +139,85 @@
 
 .header__theme-menu-button:focus-visible::after {
   opacity: 1;
+}
+
+.main-content {
+  padding-block: 40px;
+  padding-inline: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.main-content__section-title {
+  color: var(--accent-color);
+  font-size: 18px;
+  line-height: 23.4px;
+}
+
+.main-content__block-text {
+  color: var(--main-text-color);
+}
+
+.main-content__section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.link {
+  text-shadow: 2px 1px 0 var(--accent-color);
+  text-decoration: none;
+  position: relative;
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.title-text {
+  font-weight: 400;
+}
+
+.main-content-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main-gallery__image {
+  inline-size: 100%;
+  object-fit: cover;
+}
+
+.main-gallery-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.footer {
+  block-size: 100vh;
+  min-block-size: 668px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  color: var(--title-color);
+  line-height: 0.83;
 }
