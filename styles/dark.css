@@ -5,7 +5,7 @@
 */
 
 .page.theme_dark {
-  background-image: url(/images/cover-image-dark.png);
+  
 }
 
 :root.theme_dark {
@@ -19,21 +19,4 @@
   --section-title-color: rgba(255 0 112 / 1);
   --decorate-color: rgba(255 0 112 / 1);
   --decorate-word-color: rgba(255 0 112 / 1);
-}
-
-@media (prefers-color-scheme: dark) {
-  
-  .page.theme_auto {
-    /* Дублируем переменные для тёмной темы */
-    --accent-color: rgba(255 0 112 / 1);
-    --title-color: rgba(219 0 255 / 1);
-    --text-color-on-decor: rgba(0 0 40 / 1);
-    --hover-color: rgba(255 0 112 / 0.4);
-    --main-text-color: rgba(241 178 206 /1);
-    --button-color: rgba(255 0 112 / 1);
-    --section-title-color: rgba(255 0 112 / 1);
-    --decorate-color: rgba(255 0 112 / 1);
-    --decorate-word-color: rgba(255 0 112 / 1);
-    background-image: url(/images/cover-image-dark.png);
-  }
 }
