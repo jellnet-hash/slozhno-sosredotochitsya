@@ -18,3 +18,7 @@
 ## Как запустить проект
 1. Клонировать репозиторий
 2. Открыть файл `index.html` в браузере
+
+
+github pages
+https://jellnet-hash.github.io/slozhno-sosredotochitsya/
